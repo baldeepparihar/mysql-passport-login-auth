@@ -1,0 +1,369 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* CSS BEGIN */
+  .signup {
+    background-image: linear-gradient(to bottom, rgba(51, 54, 56, 0.8), rgba(38, 43, 37, 0.9)), 
+    url('../../assets/signup.jpg');
+    background-size: 100vw 100vh;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    min-height: 100vh;
+  }
+
+  .signup__header {
+    display: flex;
+    justify-content: center;
+    text-shadow: 5px 3px 6px rgba(35,219,83,0.67);
+  }
+
+  .signup__header--p {
+    margin-bottom: 50px;
+    width: 10%;
+    color: #ffffff;
+    color: rgb(99, 253, 181);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 70px;
+    visibility: visible;
+    animation: rotate .8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .signup__header--sentence {
+    margin-bottom: 50px;
+    margin-left: -50px;
+    width: 80%;
+    text-align: center;
+    color: rgb(99, 253, 181);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 70px;
+    opacity: 0;
+    animation: fade-in-right_to_left .6s ease-in .6s;
+    animation-fill-mode: forwards;
+  }
+
+  .signup__form {
+    background-color: #24292c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 475px;
+    min-width: 400px;
+    padding: 30px;
+    border-radius: 30px;
+    opacity: 0;
+    animation: fade-in .6s ease-in;
+    animation-delay: .3s;
+    animation-fill-mode: forwards;
+  }
+
+  /* All form inputs */
+  .signup__form input {
+    position: relative;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #24292c;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid green;
+    background-color: #355246;
+  }
+
+  /* All inputs on focus */
+  .signup__form input:focus {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(99, 253, 181);
+    padding-left: 10px;
+  }
+
+  /* All signup form labels */
+  .signup__form label {
+    order: -1;
+    position: absolute;
+    z-index: 10;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: rgb(99, 253, 181);
+  }
+
+  /* All labels on focus */
+  .signup__form input:focus + label {
+    color: green;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all .3s ease;
+  }
+
+  .signup__form--names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+  }
+  .firstName-label {
+    transform: translate(-90px, 13px);
+  }
+  .firstName-input:focus + label {
+    transform: translate(-115px, -15px);
+  }
+  .firstName-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-115px, -15px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .lastName-label {
+    transform: translate(-95px, 73px);
+  }
+  .lastName-input:focus + label {
+    transform: translate(-118px, 45px);
+  }
+  .lastName-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-118px, 45px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .signup__form--email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .email-label {
+    transform: translate(-125px, 13px);
+  }
+  .email-input:focus + label {
+    transform: translate(-138px, -15px);
+  }
+  .email-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-138px, -15px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .signup__form--passwords {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .password-label {
+    transform: translate(-100px, 13px);
+  }
+  .password-input:focus + label {
+    transform: translate(-120px, -15px);
+  }
+  .password-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-120px, -15px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .confirmPassword-label {
+    transform: translate(-45px, 73px);
+  }
+  .confirmPassword-input:focus + label {
+    transform: translate(-85px, 45px);
+  }
+  .confirmPassword-input:not(:placeholder-shown) + label {
+    color: green;
+    font-size: 10px;
+    transform: translate(-85px, 45px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .signup__form--button {
+    width: 100%;
+    height: 60px;
+    background-color: #355246;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-size: 25px;
+    color: rgb(99, 253, 181);
+    transition: all .3s ease;
+  }
+  .signup__form--button:hover {
+      cursor: pointer;
+      background-color: #2d8661;
+      color: #355246;
+      font-size: 20px;
+  }
+  .signup__form span {
+    font-size: 12px;
+    color: whitesmoke;
+    margin-top: 20px;
+  }
+  .signup__form--link {
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+    border-bottom: 1px solid whitesmoke;
+  }
+  
+
+  @keyframes fade-in {
+    0% { 
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-right_to_left {
+    0% {
+      margin-left: 50%;
+      opacity: 0;
+    }
+    33.3% {
+      margin-left: 25%;
+    }
+    66.6% {
+      margin-left: 0%;
+    }
+    100% {
+      margin-left: -10%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate {
+      0% {
+          transform: rotateY(0deg);
+          transform: rotateX(0deg);
+          transform: rotateZ(0deg);
+          scale: 1.2;
+          margin-left: 70%;
+          text-shadow: none;
+      }
+      12.5% {
+          transform: rotateY(45deg);
+          transform: rotateX(45deg);
+          transform: rotateZ(45deg);
+          scale: 1.5;
+          margin-left: 60%;
+          text-shadow: none;
+      }
+      25% {
+          transform: rotateY(90deg);
+          transform: rotateX(90deg);
+          transform: rotateZ(90deg);
+          scale: 2;
+          margin-left: 50%;
+          text-shadow: none;
+      }
+      37.5% {
+          transform: rotateY(135deg);
+          transform: rotateX(135deg);
+          transform: rotateZ(135deg);
+          scale: 2.4;
+          margin-left: 40%;
+          text-shadow: none;
+      }
+      50% {
+          transform: rotateY(180deg);
+          transform: rotateX(180deg);
+          transform: rotateZ(180deg);
+          scale: 2;
+          font-size: 230px;
+          margin-left: 30%;
+          text-shadow: none;
+      }
+      62.5% {
+          transform: rotateY(225deg);
+          transform: rotateX(225deg);
+          transform: rotateZ(225deg);
+          scale: 1.8;
+          margin-left: 22%;
+          text-shadow: none;
+      }
+      75% {
+          transform: rotateY(270deg);
+          transform: rotateX(270deg);
+          transform: rotateZ(270deg);
+          scale: 1.5;
+          margin-left: 11%;
+          text-shadow: none;
+      }
+      87.5% {
+          transform: rotateY(315deg);
+          transform: rotateX(315deg);
+          transform: rotateZ(315deg);
+          scale: 1.2;
+          margin-left: 6%;
+          text-shadow: none;
+      }
+      100% {
+          transform: rotateY(360deg);
+          transform: rotateX(360deg);
+          transform: rotateZ(360deg);
+          scale: 1;
+          font-size: 70px;
+          margin-left: 0%;
+          text-shadow: 5px 3px 6px rgba(35,219,83,0.67);
+      }
+  }
+
+  

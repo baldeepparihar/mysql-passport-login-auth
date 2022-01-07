@@ -1,0 +1,106 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Montserrat:wght@300;400;700&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    min-height: 100vh;
+    background: rgb(25,31,34);
+    background: linear-gradient(0deg, rgba(25,31,34,1) 31%, rgba(74,92,71,1) 50%, rgba(25,31,34,1) 69%);
+  }
+  .dashboard__header {
+    display: flex;
+    margin-bottom: 75px;
+    width: 30%;
+    font-family: 'Merienda', cursive;
+    color: green;
+    text-align: center;
+    border-bottom: 2px solid green;
+    animation: left_to_right .8s ease-in;
+    animation-fill-mode: forwards;
+  }
+  .dashboard h3 {
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: whitesmoke;
+    font-size: 30px;
+    visibility: hidden;
+    animation: spin .8s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+  .dashboard .signout {
+    color: rgb(197, 21, 21);
+  }
+  .dashboard .signout:hover {
+    cursor: pointer;
+  }
+
+  @keyframes left_to_right {
+    from {
+      margin-left: -50%;
+      font-size: 25px;
+      opacity: 0;
+    }
+    to {
+      margin-left: 0;
+      font-size: 50px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0);
+      opacity: 0.2;
+      visibility: visible;
+      scale: .1;
+    }
+    25% {
+      transform: rotateY(90deg);
+      opacity: 0.4;
+      visibility: visible;
+      scale: .25;
+    }
+    50% {
+      transform: rotateY(180deg);
+      opacity: 0.6;
+      visibility: visible;
+      scale: .25;
+    }
+    75% {
+      transform: rotateY(270deg);
+      opacity: 0.8;
+      visibility: visible;
+      scale: .5;
+    }
+    100% {
+      transform: rotateY(360deg);
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+      scale: 1;
+    }
+  }
